@@ -28,10 +28,7 @@ jobs:
         cd ./api
         go build -v -o ./api ./main.go
 
-    - name: DEBUG pwd && ls
-      run: pwd && ls
-
-    - name: Download a Build Artifact
-      uses: actions/download-artifact@v4.2.1
+    - name: Upload Build Artifact
+      uses: actions/upload-artifact@v4.2.1
       with:
         path: api/api
