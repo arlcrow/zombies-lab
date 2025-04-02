@@ -13,9 +13,11 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: make
       run: make
+      
     - name: Download a Build Artifact
       uses: actions/download-artifact@v4.2.1
       with:
-        path: ./zombie
+        path: zombie
