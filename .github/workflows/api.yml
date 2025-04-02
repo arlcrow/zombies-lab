@@ -18,16 +18,17 @@ jobs:
       with:
         go-version: '1.23'
 
-    - name: cd into api directory
-      run: cd ./api
-
     - name: Download dependencies
-      run: go mod tidy
+      run: |
+        cd ./api
+        go mod tidy
 
     - name: Build
-      run: go build -v ./main.go -o ./api
+      run: |
+        cd ./api
+        go build -v ./main.go -o ./api
 
     - name: Download a Build Artifact
       uses: actions/download-artifact@v4.2.1
       with:
-        path: ./api
+        path: ./api/api
